@@ -146,7 +146,258 @@
     <div class="clear"></div>
     <div class="all_pro"> <a href="PRODUCTS.html">All Shop</a> </div>
   </div>
+
 </div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabulshine Floss Picks - 商品评论</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 商品评论系统专用样式 - 添加命名空间避免冲突 */
+        .floss-reviews-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .floss-reviews-header {
+            background: linear-gradient(135deg, #3ec6c6 0%, #38b2b2 100%);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        .floss-reviews-header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .floss-reviews-header p {
+            opacity: 0.9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .floss-reviews-content {
+            padding: 30px;
+        }
+        .floss-review-item {
+            padding: 25px 0;
+            border-bottom: 1px solid #e0e6ed;
+            position: relative;
+        }
+        .floss-review-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            float: left;
+            border: 2px solid #3ec6c6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f4f8;
+        }
+        .floss-review-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .floss-review-details {
+            margin-left: 80px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .floss-reviewer-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .floss-reviewer-name {
+            font-weight: bold;
+            font-size: 18px;
+            color: #2c3e50;
+        }
+        .floss-review-date {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        .floss-review-rating {
+            color: #ffa500;
+            font-size: 18px;
+            margin: 8px 0;
+        }
+        .floss-review-text {
+            color: #34495e;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .floss-purchase-image {
+            margin-top: 15px;
+            padding-top: 15px;
+            text-align: center;
+        }
+        .floss-purchase-image img {
+            width: 160px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e6ed;
+            transition: transform 0.3s ease;
+        }
+        .floss-purchase-image img:hover {
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .floss-review-avatar {
+                float: none;
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+            .floss-review-details {
+                margin-left: 0;
+            }
+            .floss-reviewer-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .floss-review-date {
+                margin-top: 5px;
+            }
+            .floss-purchase-image img {
+                width: 100px;
+                height: 75px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floss-reviews-container">
+        <div class="floss-reviews-header">
+            <h1>Product Reviews</h1>
+            <p>Feedback and evaluations from real users</p>
+            <p class="floss-reviewer-name" style="margin-top: 30px;">Customer Reviews</p>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <div class="floss-review-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="overall-score floss-reviewer-name" style="margin: 0;">4.4 out of 5</p>
+        </div>
+            <p>7,064 global ratings</p>
+        </div>
+        
+        <div class="floss-reviews-content">
+            <!-- 评论列表 -->
+            <div class="floss-reviews-list">
+                <!-- 评论 1 -->
+                <div class="floss-review-item">
+                    <div class="floss-review-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson">
+                    </div>
+                    <div class="floss-review-details">
+                        <div class="floss-reviewer-info">
+                            <span class="floss-reviewer-name">Sarah Johnson</span>
+                            <span class="floss-review-date">A comment was released in the United States on July 15, 2025.</span>
+                        </div>
+                        <div class="floss-review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="floss-review-text">These dental floss picks are really great! The mint flavor is refreshing and pleasant, and my mouth feels very clean after using them. The floss is very strong and won't break. The handle design is also very comfortable. The eco-friendly material is a big plus!</p>
+                        <div class="floss-purchase-image">
+                            <img src="static/picture/Floss1.jpg" alt="Fabulshine Floss Picks">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 评论 2 -->
+                <div class="floss-review-item">
+                    <div class="floss-review-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                    </div>
+                    <div class="floss-review-details">
+                        <div class="floss-reviewer-info">
+                            <span class="floss-reviewer-name">Michael Chen</span>
+                            <span class="floss-review-date">Comment released in the United States on July 10, 2025</span>
+                        </div>
+                        <div class="floss-review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="floss-review-text">This is a very cost-effective toothpick. I like its environmentally friendly design and it is very convenient to use. The thread is a little thin, but it is sufficient for daily cleaning. The 200-piece pack is very affordable and I will definitely buy it again.</p>
+                        <div class="floss-purchase-image">
+                            <img src="static/picture/Floss2.jpg" alt="Fabulshine Floss Picks">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 评论 3 -->
+                <div class="floss-review-item">
+                    <div class="floss-review-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emily Rodriguez">
+                    </div>
+                    <div class="floss-review-details">
+                        <div class="floss-reviewer-info">
+                            <span class="floss-reviewer-name">Emily Rodriguez</span>
+                            <span class="floss-review-date">Comment released in the United States on June 28, 2025</span>
+                        </div>
+                        <div class="floss-review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="floss-review-text">This is one of the best toothpick sets I have ever used! The handle design is very user-friendly and easy to hold. The mint flavor is not too strong, just right. What's most important is that it really can effectively remove food residues from between the teeth, and it won't harm the gums.</p>
+                        <div class="floss-purchase-image">
+                            <img src="static/picture/Floss3.jpg" alt="Fabulshine Floss Picks">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 评论 4 -->
+                <div class="floss-review-item">
+                    <div class="floss-review-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="David Wilson">
+                    </div>
+                    <div class="floss-review-details">
+                        <div class="floss-reviewer-info">
+                            <span class="floss-reviewer-name">David Wilson</span>
+                            <span class="floss-review-date">Comment released in the United States on June 15, 2025</span>
+                        </div>
+                        <div class="floss-review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="floss-review-text">A very good product, easy to use, with obvious effects. I like its environmental protection concept, and the price is reasonable. The dental floss has an appropriate strength and won't break or hurt the gums. The packaging is also very exquisite and suitable for giving as a gift.</p>
+                        <div class="floss-purchase-image">
+                            <img src="static/picture/Floss4.jpg" alt="Fabulshine Floss Picks">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
 
 <!-- <div class="i_collect"> 
 
@@ -270,3 +521,8 @@
 </div>
 </body>
 </html>
+
+
+
+
+

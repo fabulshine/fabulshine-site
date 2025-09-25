@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品评论系统</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #3ec6c6 0%, #38b2b2 100%);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .header p {
+            opacity: 0.9;
+        }
+        .reviews-container {
+            padding: 30px;
+        }
+        .review-item {
+            padding: 25px 0;
+            border-bottom: 1px solid #e0e6ed;
+        }
+        .review-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            float: left;
+            border: 2px solid #3ec6c6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f4f8;
+        }
+        .review-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .review-content {
+            margin-left: 80px;
+        }
+        .reviewer-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .reviewer-name {
+            font-weight: bold;
+            font-size: 18px;
+            color: #2c3e50;
+        }
+        .review-date {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        .review-rating {
+            color: #ffa500;
+            font-size: 18px;
+            margin: 8px 0;
+        }
+        .review-text {
+            color: #34495e;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .purchase-image {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed #e0e6ed;
+        }
+        .purchase-image img {
+            max-width: 150px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .purchase-label {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+        @media (max-width: 768px) {
+            .review-avatar {
+                float: none;
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+            .review-content {
+                margin-left: 0;
+            }
+            .reviewer-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .review-date {
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>商品评论</h1>
+            <p>来自真实用户的反馈和评价</p>
+        </div>
+        
+        <div class="reviews-container">
+            <!-- 评论列表 -->
+            <div class="reviews-list">
+                <!-- 评论 1 -->
+                <div class="review-item">
+                    <div class="review-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson">
+                    </div>
+                    <div class="review-content">
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Sarah Johnson</span>
+                            <span class="review-date">2025年7月15日在美国发布评论</span>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">这些牙线棒非常好用！薄荷味清新宜人，使用后口腔感觉非常干净。线很结实，不会断裂，手柄设计也很舒适。环保材料是一个很大的加分项！</p>
+                        <div class="purchase-image">
+                            <div class="purchase-label">用户购买的商品：</div>
+                            <img src="static/picture/Floss1.jpg" alt="Fabulshine Floss Picks">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 评论 2 -->
+                <div class="review-item">
+                    <div class="review-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                    </div>
+                    <div class="review-content">
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Michael Chen</span>
+                            <span class="review-date">2025年7月10日在美国发布评论</span>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <p class="review-text">性价比很高的一款牙线棒。我喜欢它的环保设计，使用起来很方便。线稍微有点细，但对于日常清洁足够了。200支装很实惠，会再次购买。</p>
+                        <div class="purchase-image">
+                            <div class="purchase-label">用户购买的商品：</div>
+                            <img src="static/picture/Floss2.jpg" alt="Fabulshine Floss Picks">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 评论 3 -->
+                <div class="review-item">
+                    <div class="review-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emily Rodriguez">
+                    </div>
+                    <div class="review-content">
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Emily Rodriguez</span>
+                            <span class="review-date">2025年6月28日在美国发布评论</span>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="review-text">这是我用过最好的牙线棒之一！手柄设计很人性化，容易握持。薄荷味不会太强烈，恰到好处。最重要的是它真的能有效清除牙缝中的食物残渣，而且不会伤害牙龈。</p>
+                        <div class="purchase-image">
+                            <div class="purchase-label">用户购买的商品：</div>
+                            <img src="static/picture/Floss3.jpg" alt="Fabulshine Floss Picks">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 评论 4 -->
+                <div class="review-item">
+                    <div class="review-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="David Wilson">
+                    </div>
+                    <div class="review-content">
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">David Wilson</span>
+                            <span class="review-date">2025年6月15日在美国发布评论</span>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="review-text">很好的产品，使用方便，效果明显。我喜欢它的环保理念，而且价格合理。牙线强度适中，不会断裂也不会伤害牙龈。包装也很精美，适合送礼。</p>
+                        <div class="purchase-image">
+                            <div class="purchase-label">用户购买的商品：</div>
+                            <img src="static/picture/Floss4.jpg" alt="Fabulshine Floss Picks">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
