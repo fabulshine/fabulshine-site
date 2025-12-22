@@ -17,6 +17,11 @@
 <script language="javascript" type="text/javascript" src="static/js/jquery-3.7.0.min.js"></script>
 <script language="javascript" type="text/javascript" src="static/js/trade.js"></script>
 <script language="javascript" type="text/javascript" src="static/js/jquery.bxslider.js"></script>
+<style>
+#status.success { color: #28a745; }
+#status.error { color: #dc3545; }
+#status.sending { color: #17a2b8; }
+</style>
 </head>
 <body>
 <div class="web_header">
@@ -144,7 +149,7 @@
           </div>
           <div class="clear"></div>
           <div class="rows">
-            <input type="submit" class="form_button" value="Submit" id="tj">
+            <input type="submit" action="tj" class="form_button" value="Submit" id="tj" >
           </div>          
         </form>
         <p id="status"></p>
@@ -234,7 +239,7 @@
 <script>
     // 初始化 EmailJS
     (function() {
-        emailjs.init('zwJauQ3wcNyS0mOAw'); // 替换为你的 EmailJS 公钥
+        emailjs.init('aeACNhcALlr36mzxd'); // 替换为你的 EmailJS 公钥
     })();
 
     // 处理表单提交
@@ -242,27 +247,53 @@
         event.preventDefault(); // 阻止默认表单提交行为
 
         const status = document.getElementById('status');
-        status.textContent = 'Sending...';
+          status.textContent = '';
+          status.className = '';
+		      // ========== 1. 表单验证（整合所有规则，覆盖所有提交方式） ==========
+    const firstName = document.getElementById('firstName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const content = document.getElementById('content').value.trim();
+    if (!firstName) {
+        status.textContent = 'Please enter your first name!';
+        status.className = 'error';
+        document.getElementById('firstName').focus();
+        return; // 终止后续执行，不发送邮件
+    }
+	const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	if (!email) {
+        status.textContent = 'Please enter your email!';
+        status.className = 'error';
+        document.getElementById('email').focus();
+        return;
+    } else if (!emailReg.test(email)) { // 新增：邮箱格式校验
+        status.textContent = 'Please enter a valid email address!';
+        status.className = 'error';
+        document.getElementById('email').focus();
+        return;
+    }
+	 if (!content) {
+        status.textContent = 'Please enter your message!';
+        status.className = 'error';
+        document.getElementById('content').focus();
+        return;
+    }
+	
+	    // ========== 2. 验证通过，发送邮件 ==========
+    status.textContent = 'Sending...';
+    status.className = 'sending'; // 可选：加加载样式
 
         // 使用 EmailJS 发送邮件
-        emailjs.sendForm('service_2na04z9', 'template_av2579c', this)
+        emailjs.sendForm('service_2tvagqo', 'template_crkbjei', this)
             .then(function(response) {
                 status.textContent = 'Message sent successfully!';
+				status.className = 'success'; // 成功提示绿色
                 document.getElementById('contact-form').reset(); // 重置表单
             }, function(error) {
-                status.textContent = 'The sending failed. Please try again.';
+				console.error('EmailJS发送失败：', error); // 控制台打印错误，方便调试
+				status.textContent = 'The sending failed. Please try again.';
+				status.className = 'error'; // 失败提示红色
             });
     });
-</script>
-<script>
-	$(function(){
-		$('#tj').click(function(){
-			//alert(1)
-			if($('#firstName').val()==''){alert('Please enter your firstName!'); $("#firstName").focus(); return false;}
-			if ($("#email").val() == "") { alert("Please enter your  email!"); $("#email").focus(); return false; } 
-      if ($("#content").val() == "") { alert("Please enter your  Message!"); $("#content").focus(); return false; } 
-		})
-	})
 </script>
 </body>
 </html>
